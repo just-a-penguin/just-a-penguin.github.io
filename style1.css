@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  h1 {
+    font-size: 36px;
+    color: #ff8c00;
+    text-align: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Add smooth transition */
+  }
+  
+  h1:hover {
+    transform: scale(1.05); /* Add scale effect on hover */
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  .navbar {
+    background-color: #333;
+    padding: 10px 0;
+    position: fixed; /* Navbar fixed position */
+    width: 100%; /* Full width */
+    top: 0; /* Stick to the top */
+    left: 0;
+    z-index: 999; /* Ensure it's above other content */
+    animation: slideDown 0.5s ease forwards; /* Slide down animation */
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar ul li a:hover {
+    color: #ff8c00;
+  }
+  
+
+  /* Keep existing styles */
+
+/* Add media query for screens smaller than 600px (adjust as needed) */
+@media (max-width: 600px) {
+    .navbar ul li {
+      display: block; /* Change display to block for vertical layout */
+      margin-right: 0; /* Remove right margin */
+      margin-bottom: 10px; /* Add bottom margin for spacing */
+    }
+  }
+  
