@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Hover Effect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000;
+            flex-direction: column;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+            margin: 20px;
+        }
+        .section-container {
+            flex: 1;
+            background-color: #000;
+            color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            border-radius: 10px;
+        }
+        .section-container h2 {
+            margin-top: 0;
+            font-size: 48px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            margin-bottom: 60px;
+            display: flex;
+            align-items: center;
+        }
+        .projects {
+            flex: 0 0 250px;
+            background-color: #000;
+            color: white;
+            padding: 40px;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow-y: auto;
+        }
+        .projects li {
+            margin: 30px 0;
+            cursor: pointer;
+            position: relative;
+            font-size: 32px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+        .projects li:hover {
+            color: #ff4d4d;
+        }
+        .projects li:hover:after {
+            content: ' →';
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .projects li:hover:after {
+            opacity: 1;
+        }
+        .image-container {
+            flex: 1;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: background-color 0.5s ease;
+            border-radius: 10px;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            display: none;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            box-shadow: 0 4px 6px rgba(218, 30, 30, 0.1);
+            border-radius: 5px;
+        }
+        .image-container img.active {
+            display: block;
+            opacity: 1;
+        }
+        .projects-container {
+            display: none;
+        }
+        .projects-container.active {
+            display: flex;
+        }
+        .arrow {
+            display: inline-block;
+            font-size: 24px;
+            cursor: pointer;
+            user-select: none;
+            vertical-align: middle;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+        .arrow:hover {
+            transform: scale(1.2);
+        }
+        .arrow i {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: #ff4d4d;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section-container">
+            <h2>
+                <span class="arrow left-arrow"><i class="fas fa-angle-left"></i></span>
+                Projects <span id="project-set-number">1</span>
+                <span class="arrow right-arrow"><i class="fas fa-angle-right"></i></span>
+            </h2>
+            <div class="image-container">
+                <!-- Project Set 1 -->
+                <div class="projects-container active">
+                    <img id="act_responsable" src="act_responsable.png" alt="Act Responsable">
+                    <img id="sharlee" src="sharlee.png" alt="Sharlee">
+                    <img id="dua_lipa" src="dua_lipa.png" alt="Dua Lipa">
+                    <img id="cocolyze" src="cocolyze.png" alt="Cocolyze">
+                </div>
+                <!-- Project Set 2 -->
+                <div class="projects-container">
+                    <img id="project5" src="project5.png" alt="Project 5">
+                    <img id="project6" src="project6.png" alt="Project 6">
+                    <img id="project7" src="project7.png" alt="Project 7">
+                    <img id="project8" src="project8.png" alt="Project 8">
+                </div>
+                <!-- Add more project sets as needed -->
+            </div>
+        </div>
+        <div class="projects">
+            <ul id="project-list">
+                <li data-image="act_responsable.png">act responsable</li>
+                <li data-image="sharlee.png">sharlee</li>
+                <li data-image="dua_lipa.png">dua lipa</li>
+                <li data-image="cocolyze.png">cocolyze</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const imageContainer = document.querySelector('.image-container');
+        const projectsContainers = document.querySelectorAll('.projects-container');
+        const leftArrow = document.querySelector('.left-arrow');
+        const rightArrow = document.querySelector('.right-arrow');
+        const projectSetNumber = document.getElementById('project-set-number');
+        const projectList = document.getElementById('project-list');
+        let currentIndex = 0;
+
+        const projectSets = [
+            [
+                { name: 'act responsable', image: 'act_responsable.png' },
+                { name: 'sharlee', image: 'sharlee.png' },
+                { name: 'dua lipa', image: 'dua_lipa.png' },
+                { name: 'cocolyze', image: 'cocolyze.png' }
+            ],
+            [
+                { name: 'project 5', image: 'project5.png' },
+                { name: 'project 6', image: 'project6.png' },
+                { name: 'project 7', image: 'project7.png' },
+                { name: 'project 8', image: 'project8.png' }
+            ]
+            // Add more project sets as needed
+        ];
+
+        function updateProjectList() {
+            const projects = projectSets[currentIndex];
+            projectList.innerHTML = '';
+            projects.forEach(project => {
+                const li = document.createElement('li');
+                li.textContent = project.name;
+                li.dataset.image = project.image;
+                li.addEventListener('mouseover', () => {
+                    const projectsContainer = projectsContainers[currentIndex];
+                    const images = projectsContainer.querySelectorAll('img');
+                    images.forEach(img => {
+                        img.classList.remove('active');
+                    });
+                    const img = projectsContainer.querySelector(`#${project.image.split('.')[0]}`);
+                    if (img) {
+                        img.classList.add('active');
+                        imageContainer.style.backgroundColor = getRandomColor();
+                    }
+                });
+                li.addEventListener('mouseout', clearProjectScreen);
+                projectList.appendChild(li);
+            });
+        }
+
+        updateProjectList();
+
+        leftArrow.addEventListener('click', () => {
+            projectsContainers[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex - 1 + projectsContainers.length) % projectsContainers.length;
+            projectsContainers[currentIndex].classList.add('active');
+            projectSetNumber.textContent = currentIndex + 1;
+            updateProjectList();
+            clearProjectScreen();
+        });
+
+        rightArrow.addEventListener('click', () => {
+            projectsContainers[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % projectsContainers.length;
+            projectsContainers[currentIndex].classList.add('active');
+            projectSetNumber.textContent = currentIndex + 1;
+            updateProjectList();
+            clearProjectScreen();
+        });
+
+        function clearProjectScreen() {
+            const images = document.querySelectorAll('.image-container img');
+            images.forEach(img => {
+                img.classList.remove('active');
+            });
+            imageContainer.style.backgroundColor = '#000';
+        }
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>

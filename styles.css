@@ -1,0 +1,358 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    color: #333;
+
+
+
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Dancing Script', cursive;
+}
+
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #4d4e4c;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    box-sizing: border-box;
+    z-index: 1000; /* Ensure the header is on top */
+    transition: all 0.3s ease;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+header .logo:hover {
+    transform: scale(1.1);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    transition: transform 0.3s ease;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    background-color: red;
+    transition: all 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: red;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+header nav ul li:hover {
+    transform: translateY(-2px);
+}
+
+.hero {
+    height: 100vh;
+    color: #fff;
+    position: relative; /* Position relative to parent container */
+}
+
+/* .hero .overlay {
+    background: rgba(243, 243, 243, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .hero .text {
+    text-align: center;
+} */
+
+
+.hero .scroll-down {
+    position: absolute;
+    bottom: 1rem;
+    background: #f4b400;
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
+
+.about {
+    /* padding: 4rem 2rem; */
+    background: #e5e5e5;
+    text-align: center;
+    
+}
+
+.resume {
+    padding: 4rem 2rem;
+}
+
+.resume h3 {
+    color: #4b4f3e;
+}
+
+.resume ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact {
+    padding: 4rem 2rem;
+    background: #4b4f3e;
+    color: #fff;
+    text-align: center;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+.resume {
+    padding: 4rem 2rem;
+    background-color: #f4f4f4;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.resume h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #333;
+}
+
+.resume h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    color: #4b4f3e;
+}
+
+.resume ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.resume ul li {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+    border-left: 3px solid #4b4f3e;
+}
+
+.resume ul li:before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0.25rem;
+    width: 8px;
+    height: 8px;
+    background-color: #4b4f3e;
+    border-radius: 50%;
+}
+
+.resume .education, .resume .experience, .resume .skills {
+    margin-bottom: 2rem;
+}
+
+.resume .skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.resume .skills ul li {
+    background-color: #e5e5e5;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border-left: none;
+    font-weight: bold;
+}
+
+#scrollId {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; Center the content vertically and horizontally */
+    background: linear-gradient(135deg, #f3f4f7, #e2e3e7); /* Background gradient */
+}
+
+#scrollId button {
+    background: linear-gradient(135deg, #ffae00, #e97c1b); /* Gradient background */
+    border: none;
+    padding: 1rem 2rem; /* Added padding for better visual */
+    cursor: pointer;
+    font-size: 1.2rem; /* Slightly larger font size */
+    color: #fff;
+    border-radius: 1rem; /* Increased border radius */
+    transition: background 0.3s, transform 0.2s; /* Transition for background and transform */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Shadow for depth effect */
+}
+
+#scrollId button:hover {
+    background: linear-gradient(135deg, #ff9500, #dd6f34); /* Hover gradient */
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+#scrollId button:active {
+    transform: translateY(0); /* Button returns to original position when clicked */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Less shadow when clicked */
+}
+
+#scrollId button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 4px rgba(233, 161, 27, 0.4); /* Custom focus outline */
+}
+
+
+#port1 {
+    background-image: url('assets/1.png');
+    background-size: cover;
+}
+
+#about{
+    background-image: url('assets/2.png');
+    background-size: cover;
+}
+
+.about{
+
+    height: 100vh;
+    color: #fff;
+}
+
+
+
+#pic1 {
+    max-width: 40%;
+    height: auto;
+    margin-left: 2rem;
+}
+
+.text-content {
+    margin-left: 20%;
+    max-width: 55%;
+}
+
+
+
+
+
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin: 2rem; */
+}
+
+#pic1 {
+    max-width: 40%;
+    height: auto;
+    margin-left: 20rem;
+    float:right;
+    order: 1; /* Move the image to the right */
+}
+
+.text-content {
+    max-width: 55%;
+}
+
+.about h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #000000;
+}
+
+.about p {
+    font-size: 1.5rem;
+    color: #000000;
+}
+
+.additional-info {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+    order: 3; /* Move the social media section to the bottom */
+    align-self: flex-end; /* Align the social media section to the bottom*/
+    
+}
+
+.additional-info p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.social-media {
+
+    justify-content: center;
+    gap: 1rem;
+    display: flex;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+}
+
+
+
+
+
+
+
+

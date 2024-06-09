@@ -33,7 +33,7 @@ body {
   }
   
   h1:hover {
-    transform: scale(1.05); /* Add scale effect on hover */
+    transform: scale(5.05); /* Add scale effect on hover */
   }
   
   p {
@@ -94,6 +94,10 @@ body {
       display: block; /* Change display to block for vertical layout */
       margin-right: 0; /* Remove right margin */
       margin-bottom: 10px; /* Add bottom margin for spacing */
+    }
+    h1{
+        color: pink;
+        margin-top: 500;
     }
   }
   

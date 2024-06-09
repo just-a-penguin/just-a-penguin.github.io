@@ -1,25 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
+    <style type="text/css">
+        body { cursor: url('data:image/x-icon;base64,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'), auto; }
+            </style>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0", >
-  <title>Your Title</title>
-  <link rel="stylesheet" href="style1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanskar Ranjan's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 </head>
-<body>
+<body> 
 
-<div class="navbar">
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</div>
+    <header>
+        <div class="logo" onclick="scrollToTop()">Sanskar Ranjan</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About me</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Get in touch</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<div class="container">
-  <h1>Hey, I am Sanskar</h1>
-  <p>Website under construction for now :)</p>
-</div>
+    <section class="hero" id="port1">
+        <!-- <img src="/assets/p1.png" alt="Sanskar" width="300" height="500"> -->
+
+
+        <div id="scrollId">
+            <button class="scroll-down">Roll down</button>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="text-content">
+            <h2>Hello, I'm Sanskar!</h2>
+            <p>I am a final year CSE student at IIITD with interests in Algorithms, Data Science and Machine Learning. 
+            I am a passionate learner and always eager to learn new technologies. I am a quick learner and a team player. I am always ready to take up new challenges and work on them.</p>
+            <br>
+            <br>
+            
+            <p>Connect with me:</p>
+            
+            <div class="social-media">
+                <a href="https://twitter.com/yourprofile" style="text-decoration: none;">
+                    <img src="assets/instagram.png" alt="Twitter" class="social-icon">
+                </a>
+                
+                <a href="https://linkedin.com/in/yourprofile" style="text-decoration: none;">
+                    <img src="assets/linkedin.png" alt="LinkedIn" class="social-icon">
+                </a>
+                <a href="https://github.com/yourprofile" style="text-decoration: none;">
+                    <img src="assets/github.png" alt="GitHub" class="social-icon">
+                </a>
+            </div>  
+        </div>
+        <img src="assets/P5.png" alt="Sanskar" id="pic1">
+
+
+    </section>
+    <section id="projects">
+        <div class="container">
+            <div class="section-container">
+                <h2>
+                    <span class="arrow left-arrow">&larr;</span>
+                    Projects <span id="project-set-number">1</span>
+                    <span class="arrow right-arrow">&rarr;</span>
+                </h2>
+                <div class="image-container">
+                    <!-- Project Set 1 -->
+                    <div class="projects-container active">
+                        <img id="act_responsable" src="act_responsable.png" alt="Act Responsable">
+                        <img id="sharlee" src="/assets/sharlee.png" alt="Sharlee">
+                        <img id="dua_lipa" src="/assets/dua_lipa.png" alt="Dua Lipa">
+                        <img id="cocolyze" src="/assets/cocolyze.png" alt="Cocolyze">
+                    </div>
+                    <!-- Project Set 2 -->
+                    <div class="projects-container">
+                        <img id="project5" src="/assets/project5.png" alt="Project 5">
+                        <img id="project6" src="/assets/project6.png" alt="Project 6">
+                        <img id="project7" src="/assets/project7.png" alt="Project 7">
+                        <img id="project8" src="/assets/project8.png" alt="Project 8">
+                    </div>
+                    <!-- Add more project sets as needed -->
+                </div>
+            </div>
+            <div class="projects">
+                <ul id="project-list">
+                    <li data-image="act_responsable.png">act responsable</li>
+                    <li data-image="sharlee.png">sharlee</li>
+                    <li data-image="dua_lipa.png">dua lipa</li>
+                    <li data-image="cocolyze.png">cocolyze</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section id="resume" class="resume">
+        <h2>Resume</h2>
+        <div class="education">
+            <h3>Education</h3>
+            <ul>
+                <li>2022 - 2023: Digital Campus, Montpellier - Digital Web & Project Management</li>
+                <li>2021 - 2022: IUT de Béziers - Communication Technique</li>
+                <li>2017 - 2020: Economic University, Danang - International Business</li>
+            </ul>
+        </div>
+        <div class="experience">
+            <h3>Experience</h3>
+            <ul>
+                <li>2022: Marketing Intern - Remake Interior</li>
+                <li>2021: Graphic Designer Intern - Procom</li>
+            </ul>
+        </div>
+        <div class="skills">
+            <h3>Technical Skills</h3>
+            <ul>
+                <li>Software Skills: Ps, Ai, Xd, Pr</li>
+                <li>Coding Skills: HTML, CSS, SQL</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p>IIITD, Delhi, India</Del></p>
+        <p>Email: sanskaranjan1202@gmail.com</p>
+        <p>LinkedIn: sanskar.linkedIn.com</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sanskar Ranjan. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <script src="projectjs.js"></script>
 
 </body>
 </html>
