@@ -129,10 +129,10 @@ body {
 }
 
 .image-container img {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 60%;
+    max-height: 60%;
     display: none;
-    position: absolute;
+    position: top;
     opacity: 0;
     transition: opacity 0.5s ease;
     box-shadow: 0 4px 6px rgba(218, 30, 30, 0.1);

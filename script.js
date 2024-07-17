@@ -15,7 +15,7 @@ function scrollToTop() {
 
 
 document.querySelector('.scroll-down').addEventListener('click', function() {
-    const targetPosition = 990;
+    const targetPosition = 765;
     const startPosition = window.scrollY;
     const distance = targetPosition - startPosition;
     const duration = 1000; // Duration in milliseconds

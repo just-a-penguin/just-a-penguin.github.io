@@ -8,16 +8,48 @@ let currentIndex = 0;
 
 const projectSets = [
     [
-        { name: 'act responsable', image: 'act_responsable.png' },
-        { name: 'sharlee', image: 'sharlee.png' },
-        { name: 'dua lipa', image: 'dua_lipa.png' },
-        { name: 'cocolyze', image: 'cocolyze.png' }
+        { name: 'RAG Based Medical Chatbot', image: 'sharlee.jpg' },
+        { name: 'AI Resume Builder', image: 'sharlee.pneg' },
+        { name: 'Slappy Bird', image: 'sharlee.jpg' },
+        { name: 'Dawki', image: 'cocolyze.png' }
     ],
     [
-        { name: 'project 5', image: 'project5.png' },
-        { name: 'project 6', image: 'project6.png' },
-        { name: 'project 7', image: 'project7.png' },
-        { name: 'project 8', image: 'project8.png' }
+        { name: 'Distillation Architechture implementation on Translation Models', image: 'project5.png' },
+        { name: 'Custom Architechtures for ERC and EFR tasks on MELD dataset ', image: 'project6.png' },
+        { name: 'Machine Translation German-English', image: 'project7.png' },
+        { name: 'NER Task on Leglal data', image: 'project8.png' },
+        { name: 'Bigram Language model from scratch', image: 'project8.png' }
+    ]
+    [
+        { name: 'Product Recommendation System using Amazon review data', image: 'project5.png' },
+        { name: 'GPT 2 Fine tuning  for Summarization Task', image: 'project6.png' },
+        { name: 'Multimodal Retrieval System using VG16 and TF-IDF', image: 'project7.png' },
+        { name: 'Retrieval System using Inverted Indexes', image: 'project8.png' }
+
+    ]
+    [
+        { name: 'EDA on GEO(Gene Expression Omnibus) data in R ', image: 'project5.png' },
+        { name: 'Hypothesis Testing on Auto-Immune Diseases', image: 'project6.png' },
+        { name: 'Drug recommendation System using sentimental and temporal analysis', image: 'project7.png' },
+        { name: 'NSFW text calssifier on reddit data', image: 'project8.png' }
+
+    ]
+    [
+        { name: 'Neural Network Implementation from scratch on MNIST dataset ', image: 'project5.png' },
+        { name: 'Multi-Layer Perceptron Implementation on SVHN dataset', image: 'project6.png' },
+        { name: 'Decision Tree and Random Forest Implementation from scratch', image: 'project7.png' },
+        { name: 'Linear and Logistic Regression models from scratch', image: 'project8.png' }
+    ]
+    [
+        { name: 'Tanks Stars game using Java', image: 'project5.png' },
+        { name: 'Low Fidelity and Hi-FIdelity (Figma) Prototyping ', image: 'project6.png' },
+        { name: 'MENANCE (Machine Educable Noughts And Crosses Engine)', image: 'project7.png' },
+        { name: 'developing a custom virtual network using the mininet network emulation software.', image: 'project8.png' }
+    ]
+    // BTP
+    [
+        { name: 'Thesis Project on Accurate Coresets', image: 'project5.png' }
+   
     ]
     // Add more project sets as needed
 ];
